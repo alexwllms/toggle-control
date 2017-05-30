@@ -1,0 +1,55 @@
+$toggle-control-background: $white;
+$toggle-control-border: #D9DCE9;
+$toggle-control-handle-color: get-color(primary);
+$toggle-control-label-size: 12;
+$toggle-control-label-color: $white;
+
+
+.toggle-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.toggle-control__label {
+  font-size: rem-calc($toggle-control-label-size);
+  color: $toggle-control-label-color;
+  margin: 0;
+
+  .toggle-control__checkbox[type="checkbox"] + & {
+    margin: 0;
+  }
+}
+
+.toggle-control__checkbox[type="checkbox"] {
+  background-color: $toggle-control-background;
+  border: rem-calc(1) solid $toggle-control-border;
+  margin: 0 rem-calc(10);
+  width: rem-calc(75);
+  height: rem-calc(40);
+  border-radius: rem-calc(100);
+
+  &::before {
+    content: '';
+    position: relative;
+    top: rem-calc(4);
+    left: rem-calc(4);
+    display: block;
+    border-radius: rem-calc(100);
+    height: rem-calc(30);
+    width: rem-calc(30);
+    background: $toggle-control-handle-color;
+    transition: all 0.25s ease;
+  }
+
+  &:checked {
+    background: $toggle-control-background;
+    border: rem-calc(1) solid $toggle-control-border;
+
+    &::before {
+      transition: all 0.25s ease;
+      transform: translateX(rem-calc(34));
+    }
+  }
+}
+
