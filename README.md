@@ -1,2 +1,2 @@
-# toggle-control
-Simple CSS toggle control
+# Toggle Form Control
+A simple CSS toggle control.
